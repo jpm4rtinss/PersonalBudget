@@ -25,4 +25,9 @@ function registerExpense(){
        descriptionElement.value,
        valueElement.value
    )
+   saveExpense(despesa)
+}
+
+function saveExpense(d){
+    
 }
