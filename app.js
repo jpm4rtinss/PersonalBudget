@@ -11,26 +11,35 @@ class Expense {
 
 class Bd{
     
-    getNextKey(){
+    constructor(){
+        //check if there is an object in the storage
+        let key = localStorage.getItem('id')
+        /// if key its null, then there is no object in the storage 
+        if(key === null){
+            localStorage.setItem('id', 0)
+        }
+     }
+     getNextKey(){
       //check if there is an object in the storage
       //set  a different key to the object to save it in localstorage
       let nextKey = localStorage.getItem('id')
-      //console.log(parseInt(nextKey)+1)
-      console.log(nextKey)
- 
+      return parseInt(nextKey)+1
+      
     }
     
-    saveExpense(d){
+    save(d){
         //transform the object in JSON
         //put the JSON in local storage
-        
-
         let key = this.getNextKey()
-        //localStorage.setItem(key, JSON.stringify(d))
-        //localStorage.setItem('id', key)
+        localStorage.setItem(key, JSON.stringify(d))
+        
+        
+        
+        localStorage.setItem('id', key)
     
     }
 }
+let bd = new Bd()
 function registerExpense(){
    let yearElement =  document.querySelector("#year")
    let monthElement = document.querySelector("#month")
@@ -47,6 +56,7 @@ function registerExpense(){
        descriptionElement.value,
        valueElement.value
    )
-   Bd.saveExpense(expense)
+   
+   bd.save(expense)
 }
 
