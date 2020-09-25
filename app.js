@@ -9,6 +9,28 @@ class Expense {
     }
 }
 
+class Bd{
+    
+    getNextKey(){
+      //check if there is an object in the storage
+      //set  a different key to the object to save it in localstorage
+      let nextKey = localStorage.getItem('id')
+      //console.log(parseInt(nextKey)+1)
+      console.log(nextKey)
+ 
+    }
+    
+    saveExpense(d){
+        //transform the object in JSON
+        //put the JSON in local storage
+        
+
+        let key = this.getNextKey()
+        //localStorage.setItem(key, JSON.stringify(d))
+        //localStorage.setItem('id', key)
+    
+    }
+}
 function registerExpense(){
    let yearElement =  document.querySelector("#year")
    let monthElement = document.querySelector("#month")
@@ -25,9 +47,6 @@ function registerExpense(){
        descriptionElement.value,
        valueElement.value
    )
-   saveExpense(despesa)
+   Bd.saveExpense(expense)
 }
 
-function saveExpense(d){
-    
-}
