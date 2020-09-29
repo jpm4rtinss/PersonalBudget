@@ -107,6 +107,51 @@
         </div>
       </div>
     </div>
+
+
+<!-- Error Modal -->
+<div class="modal fade" id="saveError" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header text-danger">
+        <h5 class="modal-title" id="exampleModalLabel">Erro ao salvar</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Existem campos obrigátorios que não foram preenchidos. 
+      </div>
+      <div class="modal-footer">
+       
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Voltar e corrigir</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Success Modal -->
+<div class="modal fade" id="saveSuccess" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header text-success">
+        <h5 class="modal-title" id="exampleModalLabel">Erro ao salvar</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Despesa salva com sucesso!
+      </div>
+      <div class="modal-footer">
+       
+        <button type="button" class="btn btn-success" data-dismiss="modal">
+          Voltar
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
   </body>	
 
 </html>

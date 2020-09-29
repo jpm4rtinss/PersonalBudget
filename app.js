@@ -72,10 +72,11 @@ function registerExpense(){
    //if the expense data its ok -> save expense
 
    if (expense.validateData()){
-    console.log('deu bom pod salvar')   
-    //bd.save(expense)
+    bd.save(expense) 
+    $('#saveSuccess').modal('show')    
+   
     } else{
-        console.log('deu ruim manda arrumar')   
+        $('#saveError').modal('show')   
     }
 
 }
