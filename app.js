@@ -7,6 +7,15 @@ class Expense {
         this.description = description
         this.value = value 
     }
+    validateData(){
+        for(let i in this ){
+         //i = each atribbute - this[i] =  value for each atribbbute
+         // check if any atribbute have the value undefiened or empty or null
+         if(this[i] == undefined || this[i] == '' || this[i] == null){
+
+         } 
+        }
+    }
 }
 
 class Bd{
@@ -56,7 +65,13 @@ function registerExpense(){
        descriptionElement.value,
        valueElement.value
    )
-   
-   bd.save(expense)
+   //if the expense data its ok -> save expense
+
+   if (expense.validateData()){
+       bd.save(expense)
+    } else{
+
+    }
+
 }
 
