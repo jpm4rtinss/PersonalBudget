@@ -71,7 +71,7 @@ function registerExpense(){
    )
    //if the expense data its ok -> save expense and show positive feedback modal
    //if the expense data isn't ok -> dont save expense and show negative feedback modal
-     const feedbackTitle = document.querySelector("#feedbackTitle")
+     const feedbackTitleElement = document.querySelector("#feedbackTitle")
      const feedbackMensageElement = document.querySelector("#feedbackMensage")
     const feedbackButtonElement = document.querySelector("#feedbackButton")
 
@@ -79,8 +79,8 @@ function registerExpense(){
    if (expense.validateData()){
     bd.save(expense) 
     
-    feedbackTitle.innerHTML = 'Despesa salva com sucesso!'
-    feedbackTitle.classList.add("text-success") 
+    feedbackTitleElement.innerHTML = 'Despesa salva com sucesso!'
+    feedbackTitleElement.classList.add("text-success") 
 
     
     feedbackMensageElement.innerHTML = ' Despesa salva com sucesso, você pode acessa-la no menu de consultas.'
@@ -93,8 +93,8 @@ function registerExpense(){
    
     } else{
         
-        feedbackTitle.innerHTML = 'Erro ao salvar despesa'
-        feedbackTitle.classList.add("text-danger") 
+        feedbackTitleElement.innerHTML = 'Erro ao salvar despesa'
+        feedbackTitleElement.classList.add("text-danger") 
     
         feedbackMensageElement.innerHTML = ' Existem campos obrigátorios que não foram preenchidos.'
 
