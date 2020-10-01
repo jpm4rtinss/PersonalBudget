@@ -71,26 +71,35 @@ function registerExpense(){
    )
    //if the expense data its ok -> save expense and show positive feedback modal
    //if the expense data isn't ok -> dont save expense and show negative feedback modal
+     const feedbackTitle = document.querySelector("#feedbackTitle")
+     const feedbackMensageElement = document.querySelector("#feedbackMensage")
+    const feedbackButtonElement = document.querySelector("#feedbackButton")
+
 
    if (expense.validateData()){
     bd.save(expense) 
-    document.querySelector("#feedbackTitle").innerHTML = 'Despesa salva com sucesso!'
-    document.querySelector("#feedbackTitle").classList.add("text-success") 
     
-    document.querySelector("#feedbackMensage").innerHTML = ' Despesa salva com sucesso, você pode acessa-la no menu de consultas.'
-    document.querySelector("#feedbackButton").innerHTML = 'Voltar'
-    document.querySelector("#feedbackButton").classList.add("btn-success") 
+    feedbackTitle.innerHTML = 'Despesa salva com sucesso!'
+    feedbackTitle.classList.add("text-success") 
+
+    
+    feedbackMensageElement.innerHTML = ' Despesa salva com sucesso, você pode acessa-la no menu de consultas.'
+
+    feedbackButtonElement.innerHTML = 'Voltar'
+    feedbackButtonElement.classList.add("btn-success") 
     
     
     $('#feedbackModal').modal('show')    
    
     } else{
-        document.querySelector("#feedbackTitle").innerHTML = 'Erro ao salvar despesa'
-        document.querySelector("#feedbackTitle").classList.add("text-danger") 
+        
+        feedbackTitle.innerHTML = 'Erro ao salvar despesa'
+        feedbackTitle.classList.add("text-danger") 
     
-        document.querySelector("#feedbackMensage").innerHTML = ' Existem campos obrigátorios que não foram preenchidos.'
-    document.querySelector("#feedbackButton").innerHTML = 'Voltar e corrigir'
-    document.querySelector("#feedbackButton").classList.add("btn-danger") 
+        feedbackMensageElement.innerHTML = ' Existem campos obrigátorios que não foram preenchidos.'
+
+        feedbackButtonElement.innerHTML = 'Voltar e corrigir'
+        feedbackButtonElement.classList.add("btn-danger") 
 
         
         $('#feedbackModal').modal('show')   
