@@ -69,14 +69,31 @@ function registerExpense(){
        descriptionElement.value,
        valueElement.value
    )
-   //if the expense data its ok -> save expense
+   //if the expense data its ok -> save expense and show positive feedback modal
+   //if the expense data isn't ok -> dont save expense and show negative feedback modal
 
    if (expense.validateData()){
     bd.save(expense) 
-    $('#saveSuccess').modal('show')    
+    document.querySelector("#feedbackTitle").innerHTML = 'Despesa salva com sucesso!'
+    document.querySelector("#feedbackTitle").classList.add("text-success") 
+    
+    document.querySelector("#feedbackMensage").innerHTML = ' Despesa salva com sucesso, você pode acessa-la no menu de consultas.'
+    document.querySelector("#feedbackButton").innerHTML = 'Voltar'
+    document.querySelector("#feedbackButton").classList.add("btn-success") 
+    
+    
+    $('#feedbackModal').modal('show')    
    
     } else{
-        $('#saveError').modal('show')   
+        document.querySelector("#feedbackTitle").innerHTML = 'Erro ao salvar despesa'
+        document.querySelector("#feedbackTitle").classList.add("text-danger") 
+    
+        document.querySelector("#feedbackMensage").innerHTML = ' Existem campos obrigátorios que não foram preenchidos.'
+    document.querySelector("#feedbackButton").innerHTML = 'Voltar e corrigir'
+    document.querySelector("#feedbackButton").classList.add("btn-danger") 
+
+        
+        $('#feedbackModal').modal('show')   
     }
 
 }
