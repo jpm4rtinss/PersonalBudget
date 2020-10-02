@@ -52,14 +52,24 @@ class Bd{
     }
 
     recoverAllExpenses(){
-        //recover registers in local storage
-        
+        //create a array where the register will be placed
+        let expenses = Array()
         let id = localStorage.getItem('id')
-        //recover all registers in local storage
-        for(let i = 1; i <= id; i++){
-            let expense = localStorage.getItem(i)
-            console.log(expense)
+        console.log(id)
+        for(let i = 1; i <= id; i++){//recover all registers in local storage
+            //recover id register
+            let expense = JSON.parse(localStorage.getItem(i))
+            
+            // check if is one expense yet or has already removed
+            if(expense === null){
+                // if not, continue running into the array
+                continue 
+                
+            } 
+        //if is, push into the array
+        expenses.push(expense)
         }
+         return expenses
     }
 }
 let bd = new Bd()
@@ -125,5 +135,7 @@ function registerExpense(){
 }
 
 function loadExpensesList(){
-   bd.recoverAllExpenses()
+   let expenses = Array()
+   expenses = bd.recoverAllExpenses()
+   console.log(expenses)
 }
