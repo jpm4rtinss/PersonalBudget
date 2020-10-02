@@ -49,7 +49,17 @@ class Bd{
         
         
         localStorage.setItem('id', key)
-    
+    }
+
+    recoverAllExpenses(){
+        //recover registers in local storage
+        
+        let id = localStorage.getItem('id')
+        //recover all registers in local storage
+        for(let i = 1; i <= id; i++){
+            let expense = localStorage.getItem(i)
+            console.log(expense)
+        }
     }
 }
 let bd = new Bd()
@@ -114,3 +124,6 @@ function registerExpense(){
 
 }
 
+function loadExpensesList(){
+   bd.recoverAllExpenses()
+}
