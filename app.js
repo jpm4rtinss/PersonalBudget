@@ -79,14 +79,19 @@ function registerExpense(){
    if (expense.validateData()){
     bd.save(expense) 
     
+    feedbackTitleElement.classList.remove("text-danger")
+    feedbackTitleElement.classList.add("text-success")
     feedbackTitleElement.innerHTML = 'Despesa salva com sucesso!'
-    feedbackTitleElement.classList.add("text-success") 
+     
 
     
     feedbackMensageElement.innerHTML = ' Despesa salva com sucesso, você pode acessa-la no menu de consultas.'
-
+    
+    
+    feedbackButtonElement.classList.remove("btn-danger")
+    feedbackButtonElement.classList.add("btn-success")
     feedbackButtonElement.innerHTML = 'Voltar'
-    feedbackButtonElement.classList.add("btn-success") 
+     
     
     
     $('#feedbackModal').modal('show')    
@@ -94,11 +99,13 @@ function registerExpense(){
     } else{
         
         feedbackTitleElement.innerHTML = 'Erro ao salvar despesa'
+        feedbackTitleElement.classList.remove("text-success")
         feedbackTitleElement.classList.add("text-danger") 
     
         feedbackMensageElement.innerHTML = ' Existem campos obrigátorios que não foram preenchidos.'
 
         feedbackButtonElement.innerHTML = 'Voltar e corrigir'
+        feedbackButtonElement.classList.remove("btn-success") 
         feedbackButtonElement.classList.add("btn-danger") 
 
         
