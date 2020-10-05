@@ -14,6 +14,7 @@ Personal budget application for the web development course by Udemy, made with B
 
 
 ### Save expenses process
+<img src="https://github.com/jpm4rtinss/SiteEcoleta/blob/master/readmeweb.gif" alt="home web"  height="425" align="center">
 
 
 ### Consult expenses process
