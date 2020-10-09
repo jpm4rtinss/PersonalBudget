@@ -98,7 +98,13 @@ function registerExpense(){
 
    if (expense.validateData()){
     bd.save(expense) 
-    
+       yearElement.value = null
+       monthElement.value = null
+       dayElement.value = null
+       typeElement.value = null
+       descriptionElement.value= null
+       valueElement.value = null
+       
     feedbackTitleElement.classList.remove("text-danger")
     feedbackTitleElement.classList.add("text-success")
     feedbackTitleElement.innerHTML = 'Despesa salva com sucesso!'
@@ -165,7 +171,7 @@ function loadExpensesList(){
            case '5': d.type = "Transporte"
            break
        }
-       
+
        lineList.insertCell(1).innerHTML = d.type 
        lineList.insertCell(2).innerHTML = d.description
        lineList.insertCell(3).innerHTML = d.value
