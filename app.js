@@ -137,5 +137,20 @@ function registerExpense(){
 function loadExpensesList(){
    let expenses = Array()
    expenses = bd.recoverAllExpenses()
-   console.log(expenses)
+  //select tbody element in the html
+   const expenseListElement = document.querySelector('#expenseList')
+
+   //go through the expenses array 
+   expenses.forEach( function(d){
+       
+    //create line (tr element) for the table
+       let lineList = expenseListElement.insertRow()
+    //create cell (td element) for the table and put each value 
+       lineList.insertCell(0).innerHTML = `${d.day}/${d.month}/${d.year}`
+       lineList.insertCell(1).innerHTML = d.type 
+       
+       lineList.insertCell(2).innerHTML = d.description
+       lineList.insertCell(3).innerHTML = d.value
+
+   } )
 }
