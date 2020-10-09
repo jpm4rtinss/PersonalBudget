@@ -147,8 +147,26 @@ function loadExpensesList(){
        let lineList = expenseListElement.insertRow()
     //create cell (td element) for the table and put each value 
        lineList.insertCell(0).innerHTML = `${d.day}/${d.month}/${d.year}`
-       lineList.insertCell(1).innerHTML = d.type 
+     
+       //the attribute type receive a number instead of the really name, so its necessary to transform the number into your word ot represents
+       switch(d.type){
+           case '1': d.type = "Alimentação"
+           break
+
+           case '2': d.type = "Educação"
+           break
+
+           case '3': d.type = "Lazer"
+           break
+
+           case '4': d.type = "Saúde"
+           break
+
+           case '5': d.type = "Transporte"
+           break
+       }
        
+       lineList.insertCell(1).innerHTML = d.type 
        lineList.insertCell(2).innerHTML = d.description
        lineList.insertCell(3).innerHTML = d.value
 
