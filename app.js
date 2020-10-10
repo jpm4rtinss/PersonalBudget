@@ -55,7 +55,7 @@ class Bd{
         //create a array where the register will be placed
         let expenses = Array()
         let id = localStorage.getItem('id')
-        console.log(id)
+        
         for(let i = 1; i <= id; i++){//recover all registers in local storage
             //recover id register
             let expense = JSON.parse(localStorage.getItem(i))
@@ -98,13 +98,8 @@ function registerExpense(){
 
    if (expense.validateData()){
     bd.save(expense) 
-       yearElement.value = null
-       monthElement.value = null
-       dayElement.value = null
-       typeElement.value = null
-       descriptionElement.value= null
-       valueElement.value = null
        
+
     feedbackTitleElement.classList.remove("text-danger")
     feedbackTitleElement.classList.add("text-success")
     feedbackTitleElement.innerHTML = 'Despesa salva com sucesso!'
@@ -117,10 +112,17 @@ function registerExpense(){
     feedbackButtonElement.classList.remove("btn-danger")
     feedbackButtonElement.classList.add("btn-success")
     feedbackButtonElement.innerHTML = 'Voltar'
-     
     
+    $('#feedbackModal').modal('show')     
     
-    $('#feedbackModal').modal('show')    
+        yearElement.value = ''
+       monthElement.value = ''
+       dayElement.value = ''
+       typeElement.value = ''
+       descriptionElement.value= ''
+       valueElement.value = ''
+    
+   
    
     } else{
         
@@ -177,4 +179,17 @@ function loadExpensesList(){
        lineList.insertCell(3).innerHTML = d.value
 
    } )
+}
+
+function searchExpenses(){
+    let year = document.querySelector('#year').value
+    let month = document.querySelector('month').value
+    let day = document.querySelector('#day').value
+    let type = document.querySelector('#type').value
+    let description = document.querySelector('#description').value
+    let value = document.querySelector('#value').value
+
+    let expense = new Expense(year, month, day, type, description, value)
+
+    console.log(expense)
 }
