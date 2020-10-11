@@ -71,6 +71,19 @@ class Bd{
         }
          return expenses
     }
+
+    search(expense){
+        let filteredExpenses = []
+        filteredExpenses = this.recoverAllExpenses()
+        //console.log(filteredExpenses)
+       
+        //filter each attribute (if it was defined in the search) 
+       if(expense.year != ''){
+          console.log(filteredExpenses.filter(d => d.year == expense.year)) 
+       } 
+    }
+
+
 }
 let bd = new Bd()
 function registerExpense(){
@@ -183,7 +196,7 @@ function loadExpensesList(){
 
 function searchExpenses(){
     let year = document.querySelector('#year').value
-    let month = document.querySelector('month').value
+    let month = document.querySelector('#month').value
     let day = document.querySelector('#day').value
     let type = document.querySelector('#type').value
     let description = document.querySelector('#description').value
@@ -191,5 +204,5 @@ function searchExpenses(){
 
     let expense = new Expense(year, month, day, type, description, value)
 
-    console.log(expense)
+    bd.search(expense)
 }
