@@ -77,10 +77,47 @@ class Bd{
         filteredExpenses = this.recoverAllExpenses()
         //console.log(filteredExpenses)
        
-        //filter each attribute (if it was defined in the search) 
+     //filter each attribute (if it was defined in the search) 
+       
+       //year
        if(expense.year != ''){
-          console.log(filteredExpenses.filter(d => d.year == expense.year)) 
-       } 
+         console.log("entrou")
+        filteredExpenses = filteredExpenses.filter(d => d.year == expense.year)
+       }
+
+       //month
+       if(expense.month != ''){
+        console.log("entrou")
+        filteredExpenses = filteredExpenses.filter(d => d.month == expense.month)
+       }
+
+       //day
+       if(expense.day != ''){
+        console.log("entrou")
+        filteredExpenses = filteredExpenses.filter(d => d.day == expense.day)
+       }
+
+       //type
+       if(expense.type != ''){
+        console.log("entrou")
+        filteredExpenses = filteredExpenses.filter(d => d.type == expense.type)
+       }
+
+       //description
+       if(expense.description != ''){
+        console.log("entrou")
+        filteredExpenses = filteredExpenses.filter(d => d.description == expense.description)
+       }
+
+       //value
+       if(expense.value != ''){
+        console.log("entrou")
+        filteredExpenses = filteredExpenses.filter(d => d.value == expense.value)
+       }
+       console.log(filteredExpenses)
+
+       
+        
     }
 
 
