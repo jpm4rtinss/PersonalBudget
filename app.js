@@ -227,6 +227,17 @@ function loadExpensesList(expenses = Array(), filter=false){
        lineList.insertCell(2).innerHTML = d.description
        lineList.insertCell(3).innerHTML = d.value
 
+       //create a button to remove expenses 
+       let btn = document.createElement('button')
+       
+       //stylize and add a remove icon
+       btn.className = 'btn btn-danger'
+       btn.innerHTML= '<i class="fas fa-times"></i>'
+
+       //add button to the list as cell
+       lineList.insertCell(4).append(btn)
+
+
    } )
 }
 
