@@ -13,7 +13,7 @@ Personal budget application for the web development course by Udemy, made with B
 - **JS ES6**
 
 
-### Save expenses process
+### Save expenses process (successful journey and error message)
 <img src="https://github.com/jpm4rtinss/PersonalBudget/blob/main/SaveExpenses-Video.gif" alt="home web"  height="425" align="center">
 
 
