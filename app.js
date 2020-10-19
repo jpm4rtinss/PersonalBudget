@@ -67,6 +67,7 @@ class Bd{
                 
             } 
         //if is, push into the array
+        expense.id=i 
         expenses.push(expense)
         }
          return expenses
@@ -111,6 +112,10 @@ class Bd{
        return filteredExpenses 
        
         
+    }
+
+    removeExpenses(id){
+        localStorage.removeItem(id)
     }
 
 
@@ -233,6 +238,13 @@ function loadExpensesList(expenses = Array(), filter=false){
        //stylize and add a remove icon
        btn.className = 'btn btn-danger'
        btn.innerHTML= '<i class="fas fa-times"></i>'
+       btn.id = d.id
+
+       //remove-expense function
+       btn.onclick = function() {
+          
+          bd.removeExpenses(this.id)
+       }
 
        //add button to the list as cell
        lineList.insertCell(4).append(btn)
