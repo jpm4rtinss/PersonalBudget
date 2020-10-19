@@ -244,6 +244,7 @@ function loadExpensesList(expenses = Array(), filter=false){
        btn.onclick = function() {
           
           bd.removeExpenses(this.id)
+          window.location.reload()
        }
 
        //add button to the list as cell
