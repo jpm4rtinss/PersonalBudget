@@ -244,7 +244,11 @@ function loadExpensesList(expenses = Array(), filter=false){
        btn.onclick = function() {
           
           bd.removeExpenses(this.id)
-          window.location.reload()
+
+          //show the removedmodal
+          $('#removedModal').modal('show') 
+     
+          
        }
 
        //add button to the list as cell
@@ -270,3 +274,4 @@ function searchExpenses(){
 
 
 }
+
