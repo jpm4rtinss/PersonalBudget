@@ -18,7 +18,7 @@ Personal budget application for the web development course by Udemy, made with B
 
 
 ### Consult and filter expenses process
-In process
+<img src="https://github.com/jpm4rtinss/PersonalBudget/blob/main/ConsultExpenses-gif.gif" alt="home web"  height="425" align="center">
 
 
 ### Text language
