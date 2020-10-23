@@ -231,6 +231,11 @@ function loadExpensesList(expenses = Array(), filter=false){
        lineList.insertCell(1).innerHTML = d.type 
        lineList.insertCell(2).innerHTML = d.description
        lineList.insertCell(3).innerHTML = d.value
+      let totalExpensesElement = document.querySelector("#totalExpenses") 
+      let totalExpenses = 0
+      totalExpenses =+  parseInt(d.value)
+      console.log(totalExpenses)
+      totalExpensesElement.innerHTML = totalExpenses
 
        //create a button to remove expenses 
        let btn = document.createElement('button')
