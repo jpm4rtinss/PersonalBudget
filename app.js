@@ -202,8 +202,12 @@ function loadExpensesList(expenses = Array(), filter=false){
    //clear the list before insert content
    expenseListElement.innerHTML = ''
 
+   let totalExpensesElement = document.querySelector("#totalExpenses") 
+       let totalExpenses = 0
+
    //go through the expenses array 
    expenses.forEach( function(d){
+       
        
     //create line (tr element) for the table
        let lineList = expenseListElement.insertRow()
@@ -231,12 +235,12 @@ function loadExpensesList(expenses = Array(), filter=false){
        lineList.insertCell(1).innerHTML = d.type 
        lineList.insertCell(2).innerHTML = d.description
        lineList.insertCell(3).innerHTML = d.value
-      let totalExpensesElement = document.querySelector("#totalExpenses") 
-      let totalExpenses = 0
-      totalExpenses =+  parseInt(d.value)
+      
+       
+        totalExpenses += parseFloat(d.value) 
+      console.log(d.value)
       console.log(totalExpenses)
       totalExpensesElement.innerHTML = totalExpenses
-
        //create a button to remove expenses 
        let btn = document.createElement('button')
        
