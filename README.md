@@ -22,4 +22,4 @@ Personal budget application for the web development course by Udemy, made with B
 
 
 ### Text language
-- **Portugese - BR**
+- **Portuguese - BR**
