@@ -240,7 +240,7 @@ function loadExpensesList(expenses = Array(), filter=false){
         totalExpenses += parseFloat(d.value) 
       console.log(d.value)
       console.log(totalExpenses)
-      totalExpensesElement.innerHTML = totalExpenses
+      
        //create a button to remove expenses 
        let btn = document.createElement('button')
        
@@ -265,6 +265,9 @@ function loadExpensesList(expenses = Array(), filter=false){
 
 
    } )
+   //set a text to the toal expense
+   totalExpenses = `R$ ${totalExpenses},00`
+   totalExpensesElement.innerHTML = totalExpenses
 }
 
 function searchExpenses(){
