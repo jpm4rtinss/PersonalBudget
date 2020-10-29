@@ -9,7 +9,7 @@ Personal budget application for the web development course by Udemy, made with B
 ### 🛠 Tech stack
 
 - **HTML**
-- **CSS** - Bootstrap
+- **CSS** - Bootstrap Library and flexbox
 - **JS ES6**
 
 
