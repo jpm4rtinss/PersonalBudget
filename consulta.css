@@ -1,0 +1,7 @@
+#total tr{
+    display: flex; 
+    justify-content: space-between; 
+}
+    #total tr th{
+        border: none;
+    }
